@@ -35,7 +35,7 @@ Other socket types could be easily derived from ``ZmqConnection``.
 Architecture
 ------------
 
-In tx0mq, different considerations need to be made that with standard Twisted
+In tx0mq, different considerations need to be made than with standard Twisted
 code that use TCP and UDP.  From the zguide [#]_::
 
  * ØMQ sockets carry messages, rather than bytes (as in TCP) or
