@@ -64,7 +64,11 @@ code that use TCP and UDP.  From the zguide [#]_::
 Examples
 --------
 
-We are slowly adding tx0mq versions of all the Python examples in the zguide.
+We are slowly adding tx0mq versions of:
+
+1. all the Python examples in the zguide, and
+2. the examples that come with the pyzmq source.
+
 They are available for your viewing pleasure in the examples directory.
 
 Hacking
