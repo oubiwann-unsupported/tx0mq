@@ -15,3 +15,4 @@
 * Moved zguide examples into their own subdir.
 * Added the pyzmq project's examples to tx0mq examples and added a README.
 * Removed requirements* text files.
+* Changed the license to BSD.
