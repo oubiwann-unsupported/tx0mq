@@ -1,5 +1,7 @@
 from setuptools import find_packages, setup
-import sys
+
+from tx0mq import meta
+
 
 setup(
     name=meta.display_name,
@@ -9,8 +11,7 @@ setup(
     author_email=meta.author_email,
     url=meta.url,
     license=meta.license,
-    long_description=meta.long_description,
     packages=find_packages('.'),
     long_description=open('README.rst').read(),
-    install_requires=meta.requires,
+    install_requires=meta.requirements,
 )

@@ -1,3 +1,6 @@
+import sys
+
+
 display_name = "tx0mq"
 library_name = "tx0mq"
 version = "0.5.0"
