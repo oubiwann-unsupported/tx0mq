@@ -2,7 +2,8 @@ A Twisted Library for ZeroMQ
 ============================
 
 Note that though initially based on the work in txZMQ, this project is almost a
-complete rewrite.
+complete rewrite. tx0mq started life as git pull from txZMQ, in the event that
+they ever wanted to merge it back in, it would be trivial to do so.
 
 tx0mq allows to integrate easily `ZeroMQ <http://zeromq.org>`_ sockets into
 Twisted event loop (reactor).
