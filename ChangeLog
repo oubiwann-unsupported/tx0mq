@@ -12,3 +12,4 @@
 * Fixed up setup.py and meta.py.
 * Removed the old example and added a bunch of regular-Python 0mq examples
 (copied from the zguide).
+* Moved zguide examples into their own subdir.
