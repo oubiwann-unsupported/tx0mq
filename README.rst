@@ -2,15 +2,16 @@ A Twisted Library for ZeroMQ
 ============================
 
 Note that though initially based on the work in txZMQ, this project is almost a
-complete rewrite. tx0mq started life as git pull from txZMQ, in the event that
-they ever wanted to merge it back in, it would be trivial to do so.
+complete rewrite. tx0mq started life as a ``git pull`` from txZMQ, in the event
+that they ever wanted to merge it back in, it would be trivial to do so.
 
-tx0mq allows to integrate easily `ZeroMQ <http://zeromq.org>`_ sockets into
-Twisted event loop (reactor).
+tx0mq provides for the easy integration of  `ZeroMQ <http://zeromq.org>`_
+sockets into the Twisted event loop (reactor).
 
-Supports CPython and PyPy.
+Like txZMQ before it, tx0mq Supports CPython and PyPy.
 
-Requirements:
+Requirements
+------------
 
 * ZeroMQ library >= 2.1 (heavily tested with 2.1.4)
 
