@@ -1,0 +1,9 @@
+2011.12.22
+
+* Cloned the txZMQ repo.
+* Renamed the package to tx0mq.
+* Replaced the Makefile.
+* Updated the README.
+* Added a scripts subpackage.
+* Added a meta module.
+* Added a ChangeLog file.

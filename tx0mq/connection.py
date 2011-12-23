@@ -1,15 +1,15 @@
 """
 ZeroMQ connection.
 """
-
 from collections import deque, namedtuple
+
+from zope.interface import implements
+
+from twisted.internet.interfaces import IReadDescriptor, IFileDescriptor
+from twisted.python import log
 
 from zmq.core.socket import Socket
 from zmq.core import constants, error
-
-from zope.interface import implements
-from twisted.internet.interfaces import IReadDescriptor, IFileDescriptor
-from twisted.python import log
 
 
 class ZmqEndpointType(object):

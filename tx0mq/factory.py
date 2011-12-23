@@ -1,7 +1,6 @@
 """
 ZeroMQ Twisted factory which is controlling ZeroMQ context.
 """
-
 from zmq.core.context import Context
 
 from twisted.internet import reactor
