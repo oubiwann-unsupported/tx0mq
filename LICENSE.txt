@@ -1,4 +1,4 @@
-Copyright (c) 2001-2008, AdytumSolutions, Inc.
+Copyright (c) 2011 Duncan McGreggor <duncan@dreamhost.com>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -11,9 +11,9 @@ are met:
     copyright notice, this list of conditions and the following
     disclaimer in the documentation and/or other materials provided
     with the distribution.
-    * Neither the name of the AdytumSolutions nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
+    * Neither the name of tx0mq nor the names of its contributors may
+    be used to endorse or promote products derived from this software
+    without * specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -30,7 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Copyright Exceptions:
     Portions of support libraries are taken from other projects
-    or public domain code. All files in the pymon release that
-    do not decalre their own license at the top of the file
+    or public domain code. All files in the tx0mq release that
+    do not declare their own license at the top of the file
     fall under the above defined license.
 
