@@ -19,3 +19,4 @@
 * Updated the license file.
 * Fixed up setup.py and meta.py.
 * Made sure that examples were included in the dist builds.
+* Organized the zguide examples from chapter 1.
