@@ -21,3 +21,4 @@
 * Made sure that examples were included in the dist builds.
 * Organized the zguide examples from chapter 1.
 * Started adding an "architecture" section to the README.
+* Added some thoughts about the ways in which a client API my be used.
