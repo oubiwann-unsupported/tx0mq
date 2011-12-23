@@ -31,14 +31,25 @@ push:
 
 
 push-all: push push-tags
-.PHONY: push-all
+
 
 pull:
 	git pull -a https://$(GITHUB_REPO)
 
 
 update: pull push-all
-.PHONY: update
+
+
+delete-branch: BRANCH := XXX
+delete-branch:
+	git branch -D $(BRANCH)
+	git push origin :$(BRANCH)
+
+
+delete-tag: TAG := XXX
+delete-tag:
+	git tag -d $(TAG)
+	git push origin :refs/tags/$(TAG)
 
 
 commit-raw:
@@ -49,7 +60,6 @@ msg:
 	@rm -f $(MSG_FILE)
 	@echo '!!! REMOVE THIS LINE !!!' >> $(MSG_FILE)
 	@git diff ChangeLog |egrep -v '^\+\+\+'|egrep '^\+.*'|sed -e 's/^+//' >> $(MSG_FILE)
-.PHONY: msg
 
 
 commit: msg
@@ -59,7 +69,6 @@ commit: msg
 
 
 commit-push: commit push-all
-.PHONY: commit-push
 
 
 stat: msg
@@ -78,12 +87,10 @@ stat: msg
 
 
 status: stat
-.PHONY: status
 
 
 todo:
 	git grep -n -i -2 XXX
-.PHONY: todo
 
 
 build:
@@ -104,12 +111,9 @@ check:
 	env/bin/pyflakes tx0mq
 	env/bin/trial tx0mq
 
-.PHONY: check
-
 
 check-integration:
 # placeholder for integration tests
-.PHONY: check-integration
 
 
 build-docs:
@@ -126,3 +130,6 @@ upload: check
 
 upload-docs: build-docs
 	python setup.py upload_docs --upload-dir=docs/html/
+
+
+.PHONY: push-all update msg commit-push status todo check check-integration
