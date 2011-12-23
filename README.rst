@@ -26,10 +26,40 @@ non-blocking manner, scatter-gather for multipart messages.
 Special descendants of that class, ``ZmqPubConnection`` and ``ZmqSubConnection``
 add special nice features for PUB/SUB sockets.
 
-Request/reply pattern is achieved via XREQ/XREP sockets and classes ``ZmqXREQConnection``, 
+Request/reply pattern is achieved via XREQ/XREP sockets and classes ``ZmqXREQConnection``,
 ``ZmqXREPConection`` (by verterok).
 
 Other socket types could be easily derived from ``ZmqConnection``.
+
+
+Architecture
+------------
+
+In tx0mq, different considerations need to be made that with standard Twisted
+code that use TCP and UDP.  From the zguide::
+
+ * ØMQ sockets carry messages, rather than bytes (as in TCP) or
+   frames (as in UDP). A message is a length-specified blob of
+   binary data. We'll come to messages shortly, their design is
+   optimized for performance and thus somewhat tricky to
+   understand.
+
+ * ØMQ sockets do their I/O in a background thread. This means
+   that messages arrive in a local input queue, and are sent
+   from a local output queue, no matter what your application
+   is busy doing. These are configurable memory queues, by the
+   way.
+
+ * ØMQ sockets can, depending on the socket type, be connected
+   to (or from, it's the same) many other sockets. Where TCP
+   emulates a one-to-one phone call, ØMQ implements one-to-many
+   (like a radio broadcast), many-to-many (like a post office),
+   many-to-one (like a mail box), and even one-to-one.
+
+ * ØMQ sockets can send to many endpoints (creating a fan-out
+   model), or receive from many endpoints (creating a fan-in
+   model).
+
 
 Examples
 --------
