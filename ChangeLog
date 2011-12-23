@@ -9,3 +9,4 @@
 * Added a ChangeLog file.
 * Renamed tx0mq.xreq_xrep to tx0mq.xreqxrep.
 * Renamed tx0mq.test to tx0mq.tests.
+* Fixed up setup.py and meta.py.

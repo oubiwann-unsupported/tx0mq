@@ -1,15 +1,16 @@
-from distutils.core import setup
+from setuptools import find_packages, setup
 import sys
 
 setup(
-        name='txZMQ',
-        version='0.3.1',
-        packages=['txZMQ','txZMQ.test'],
-        license='GPLv2',
-        author='Andrey Smirnov',
-        author_email='me@smira.ru',
-        url='http://pypi.python.org/pypi/txZMQ',
-        description='Twisted bindings for ZeroMQ',
-        long_description=open('README.rst').read(),
-        install_requires=["Twisted>=10.0", "pyzmq-ctypes>=2.1" if sys.subversion[0] == "PyPy" else "pyzmq>=2.1" ],
-        )
+    name=meta.display_name,
+    version=meta.version,
+    description=meta.description,
+    author=meta.author,
+    author_email=meta.author_email,
+    url=meta.url,
+    license=meta.license,
+    long_description=meta.long_description,
+    packages=find_packages('.'),
+    long_description=open('README.rst').read(),
+    install_requires=meta.requires,
+)

@@ -6,8 +6,7 @@ author_email = "oubiwann@gmail.com"
 license = "BSD"
 url = "https://github.com/oubiwann/tx0mq"
 description = "A Twisted Library for ZeroMQ"
-long_description = """"""
 requirements = [
-    "pyzmq",
-    "twisted",
+    "Twisted>=10.0",
+    "pyzmq-ctypes>=2.1" if sys.subversion[0] == "PyPy" else "pyzmq>=2.1",
     ]
