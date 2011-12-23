@@ -4,7 +4,7 @@ ZeroMQ integration into Twisted reactor.
 from tx0mq.connection import ZmqEndpointType, ZmqEndpoint, ZmqConnection
 from tx0mq.factory import ZmqFactory
 from tx0mq.pubsub import ZmqPubConnection, ZmqSubConnection
-from tx0mq.xreq_xrep import ZmqXREQConnection
+from tx0mq.xreqxrep import ZmqXREQConnection
 
 
 __all__ = [

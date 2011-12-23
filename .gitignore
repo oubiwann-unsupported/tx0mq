@@ -1,6 +1,10 @@
-MANIFEST
-env/
-dist/
-_trial_temp/
-*.pyc
-*~
+.bzrignore
+.bzr
+*.py[oc]
+dist
+sdist
+build
+*.egg
+*.egg-info
+nohup.out
+*.sw[po]

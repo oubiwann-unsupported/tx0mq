@@ -7,3 +7,5 @@
 * Added a scripts subpackage.
 * Added a meta module.
 * Added a ChangeLog file.
+* Renamed tx0mq.xreq_xrep to tx0mq.xreqxrep.
+* Renamed tx0mq.test to tx0mq.tests.
