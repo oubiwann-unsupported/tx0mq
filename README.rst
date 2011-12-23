@@ -36,7 +36,7 @@ Architecture
 ------------
 
 In tx0mq, different considerations need to be made that with standard Twisted
-code that use TCP and UDP.  From the zguide::
+code that use TCP and UDP.  From the zguide [#]_::
 
  * ØMQ sockets carry messages, rather than bytes (as in TCP) or
    frames (as in UDP). A message is a length-specified blob of
@@ -72,3 +72,8 @@ Hacking
 
 Source code for tx0mq is available at `github <https://github.com/oubiwann/tx0mq>`_,
 forks and pull requests are welcome.
+
+Footnotes
+---------
+
+.. [#] http://zguide.zeromq.org/page:all#toc22
