@@ -13,3 +13,4 @@
 * Removed the old example and added a bunch of regular-Python 0mq examples
 (copied from the zguide).
 * Moved zguide examples into their own subdir.
+* Added the pyzmq project's examples to tx0mq examples and added a README.
