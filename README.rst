@@ -64,10 +64,10 @@ code that use TCP and UDP.  From the zguide [#]_::
 
 
 Thoughts on integration with Twisted:
- * `Non-blocking calls and Twisted http://lists.zeromq.org/pipermail/zeromq-dev/2010-April/003163.html`_
- * `Twisted integration, part 2: review http://lists.zeromq.org/pipermail/zeromq-dev/2010-June/003848.html`_
- * `Twisted ZeroMQ Reactor http://lists.zeromq.org/pipermail/zeromq-dev/2010-September/005938.html`_
- * `txZMQ Announcement http://lists.zeromq.org/pipermail/zeromq-dev/2011-April/010880.html`_
+ * `Non-blocking calls and Twisted <http://lists.zeromq.org/pipermail/zeromq-dev/2010-April/003163.html>`_
+ * `Twisted integration, part 2: review <http://lists.zeromq.org/pipermail/zeromq-dev/2010-June/003848.html>`_
+ * `Twisted ZeroMQ Reactor <http://lists.zeromq.org/pipermail/zeromq-dev/2010-September/005938.html>`_
+ * `txZMQ Announcement <http://lists.zeromq.org/pipermail/zeromq-dev/2011-April/010880.html>`_
 
 Examples
 --------
