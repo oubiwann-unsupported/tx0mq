@@ -1,10 +1,9 @@
 """
-Tests for L{txZMQ.factory}.
+Tests for L{tx0mq.factory}.
 """
-
 from twisted.trial import unittest
 
-from txZMQ.factory import ZmqFactory
+from tx0mq.factory import ZmqFactory
 
 
 class ZmqFactoryTestCase(unittest.TestCase):

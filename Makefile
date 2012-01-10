@@ -107,9 +107,9 @@ check-dist:
 
 
 check:
-	env/bin/pep8 --repeat --ignore=E501 tx0mq
-	env/bin/pyflakes tx0mq
-	env/bin/trial tx0mq
+	/usr/bin/env pep8 --repeat --ignore=E501 tx0mq
+	/usr/bin/env pyflakes tx0mq
+	/usr/bin/env trial tx0mq
 
 
 check-integration:

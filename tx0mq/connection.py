@@ -3,21 +3,21 @@ ZeroMQ connection.
 """
 from collections import deque, namedtuple
 
+from zmq.core import constants, error
+from zmq.core.socket import Socket
+
 from zope.interface import implements
 
-from twisted.internet.interfaces import IReadDescriptor, IFileDescriptor
+from twisted.internet.interfaces import IFileDescriptor, IReadDescriptor
 from twisted.python import log
-
-from zmq.core.socket import Socket
-from zmq.core import constants, error
 
 
 class ZmqEndpointType(object):
     """
     Endpoint could be "bound" or "connected".
     """
-    Bind = "bind"
-    Connect = "connect"
+    bind = "bind"
+    connect = "connect"
 
 
 ZmqEndpoint = namedtuple('ZmqEndpoint', ['type', 'address'])
@@ -32,8 +32,8 @@ class ZmqConnection(object):
     @type allowLoopbackMulticast: C{boolean}
     @cvar multicastRate: maximum allowed multicast rate, kbps
     @type multicastRate: C{int}
-    @cvar highWaterMark: hard limit on the maximum number of outstanding messages
-        0MQ shall queue in memory for any single peer
+    @cvar highWaterMark: hard limit on the maximum number of outstanding
+        messages 0MQ shall queue in memory for any single peer
     @type highWaterMark: C{int}
 
     @ivar factory: ZeroMQ Twisted factory reference
@@ -72,7 +72,8 @@ class ZmqConnection(object):
 
         self.fd = self.socket.getsockopt(constants.FD)
         self.socket.setsockopt(constants.LINGER, factory.lingerPeriod)
-        self.socket.setsockopt(constants.MCAST_LOOP, int(self.allowLoopbackMulticast))
+        self.socket.setsockopt(
+            constants.MCAST_LOOP, int(self.allowLoopbackMulticast))
         self.socket.setsockopt(constants.RATE, self.multicastRate)
         self.socket.setsockopt(constants.HWM, self.highWaterMark)
         if self.identity is not None:
@@ -98,7 +99,8 @@ class ZmqConnection(object):
         self.factory = None
 
     def __repr__(self):
-        return "%s(%r, %r)" % (self.__class__.__name__, self.factory, self.endpoints)
+        return "%s(%r, %r)" % (
+            self.__class__.__name__, self.factory, self.endpoints)
 
     def fileno(self):
         """
@@ -172,7 +174,8 @@ class ZmqConnection(object):
         """
         while self.queue:
             try:
-                self.socket.send(self.queue[0][1], constants.NOBLOCK | self.queue[0][0])
+                self.socket.send(
+                    self.queue[0][1], constants.NOBLOCK | self.queue[0][0])
             except error.ZMQError as e:
                 if e.errno == constants.EAGAIN:
                     break
@@ -201,8 +204,8 @@ class ZmqConnection(object):
             self.queue.extend([(constants.SNDMORE, m) for m in message[:-1]])
             self.queue.append((0, message[-1]))
 
-        # this is crazy hack: if we make such call, zeromq happily signals available events
-        # on other connections
+        # this is crazy hack: if we make such call, zeromq happily signals
+        # available events on other connections
         self.socket.getsockopt(constants.EVENTS)
 
         self._startWriting()
@@ -220,9 +223,9 @@ class ZmqConnection(object):
         Connect and/or bind socket to endpoints.
         """
         for endpoint in self.endpoints:
-            if endpoint.type == ZmqEndpointType.Connect:
+            if endpoint.type == ZmqEndpointType.connect:
                 self.socket.connect(endpoint.address)
-            elif endpoint.type == ZmqEndpointType.Bind:
+            elif endpoint.type == ZmqEndpointType.bind:
                 self.socket.bind(endpoint.address)
             else:
                 assert False, "Unknown endpoint type %r" % endpoint

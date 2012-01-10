@@ -1,8 +1,9 @@
 """
 ZeroMQ PUB-SUB wrappers.
 """
-from twisted.internet import defer
 from zmq.core import constants
+
+from twisted.internet import defer
 
 from tx0mq.connection import ZmqConnection
 
@@ -77,7 +78,8 @@ class ZmqXREPConnection(ZmqConnection):
         """
         i = message.index('')
         assert i > 0
-        routing_info, msg_id, payload = message[:i - 1], message[i - 1], message[i + 1:]
+        (routing_info, msg_id, payload) = (
+            message[:i - 1], message[i - 1], message[i + 1:])
         msg_parts = payload[0:]
         self._routing_info[msg_id] = routing_info
         self.gotMessage(msg_id, *msg_parts)
